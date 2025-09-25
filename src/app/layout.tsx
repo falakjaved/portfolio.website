@@ -1,49 +1,67 @@
-import "./globals.css";
-import Link from "next/link";
 
-export const metadata = {
-  title: "My Portfolio",
-  description: "Personal portfolio website",
-};
+import '../../styles/globals.css';
+import { ReactNode } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import profilePic from '../../public/profile.jpg.jpg';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 text-gray-900">
+      <body className="bg-purple-50 text-gray-800 font-sans">
+
         {/* Navbar */}
-        <header className="flex justify-between items-center px-8 py-4 shadow-md bg-white sticky top-0 z-50">
-          <div className="flex items-center gap-3">
-            <img
-              src="/profile.jpg"
-              alt="Profile"
-              className="w-12 h-12 rounded-full border-2 border-purple-500"
-            />
-            <h1 className="text-xl font-bold">Your Name</h1>
+        <header className="bg-white shadow-md sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
+            
+            {/* Left: Pic + Name */}
+            <div className="flex items-center space-x-3">
+              <Image
+                src={profilePic}
+                alt="Falak Javed"
+                width={40}
+                height={40}
+                className="rounded-full border-2 border-purple-400"
+              />
+              <span className="font-bold text-lg">Falak Javed</span>
+            </div>
+
+            {/* Right: Navigation */}
+            <nav className="space-x-6 font-medium">
+              <Link href="/">Home</Link>
+              <Link href="/about">About</Link>
+              <Link href="/portfolio">Portfolio</Link>
+              <Link href="/contact">Contact</Link>
+            </nav>
           </div>
-          <nav className="flex gap-6">
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/projects">Projects</Link>
-            <Link href="/contact">Contact</Link>
-          </nav>
         </header>
 
-        {/* Content */}
-        <main className="min-h-screen px-8 py-6">{children}</main>
+        {/* Page Content */}
+        <main>{children}</main>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white text-center py-6">
-          <p>© 2025 Your Name. All Rights Reserved.</p>
-          <div className="flex justify-center gap-6 mt-3">
-            <a href="https://github.com/" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-            <a href="https://twitter.com/" target="_blank">Twitter</a>
-          </div>
+        <footer className="bg-white mt-10 p-6 text-center shadow-inner">
+          <p className="mb-2">Connect with me:</p>
+          <div className="flex justify-center space-x-4">
+  <a href="https://www.facebook.com/@Falak Javed " target="_blank" rel="noopener noreferrer">
+    Facebook
+  </a>
+  <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+    LinkedIn
+  </a>
+  <a href="https://www.github.com/@falakjaved" target="_blank" rel="noopener noreferrer">
+    GitHub
+  </a>
+  <a href="https://www.instagram.com/@falak_javed2" target="_blank" rel="noopener noreferrer">
+    Instagram
+  </a>
+  <a href="https://www.tiktok.com/@falakjaved01" target="_blank" rel="noopener noreferrer">
+    TikTok
+  </a>
+</div>
+          <p className="mt-4 text-sm text-gray-500">© 2025 Falak Javed. All Rights Reserved</p>
         </footer>
+
       </body>
     </html>
   );
