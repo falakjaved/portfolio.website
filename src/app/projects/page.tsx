@@ -1,4 +1,4 @@
-export default function Portfolio() {
+export default function projects() {
   const projects = [
     { title: 'Project One', description: 'Amazing web app', link: '#' },
     { title: 'Project Two', description: 'Creative design', link: '#' },

@@ -3,7 +3,7 @@ import '../../styles/globals.css';
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import profilePic from '../../public/profile.jpg.jpg';
+import profilePic from '../../public/profile.jpg';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -26,11 +26,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <span className="font-bold text-lg">Falak Javed</span>
             </div>
 
-            {/* Right: Navigation */}
+             {/* Right: Navigation */}
             <nav className="space-x-6 font-medium">
               <Link href="/">Home</Link>
               <Link href="/about">About</Link>
-              <Link href="/portfolio">Portfolio</Link>
+              <Link href="/projects">projects</Link>
               <Link href="/contact">Contact</Link>
             </nav>
           </div>
